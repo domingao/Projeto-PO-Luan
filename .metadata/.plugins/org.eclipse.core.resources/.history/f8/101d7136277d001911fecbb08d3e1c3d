@@ -1,0 +1,141 @@
+import javax.swing.JOptionPane;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+public class Main extends Application{
+	
+	
+	@Override
+	public void start(final Stage stage) throws Exception {		
+		stage.setTitle("Login");
+		
+			
+		
+		AnchorPane pane = new AnchorPane();
+		pane.setPrefSize(640, 480);
+		Scene scene = new Scene(pane);
+		stage.setScene(scene);
+		stage.setResizable(false);
+		
+		
+		
+		
+		//botao
+		Button logar = new Button("Logar");
+		logar.setTextFill(Color.DIMGRAY);
+		logar.setFont(Font.font("verdana", FontWeight.BOLD, 25));
+		logar.setLayoutX(350);
+		logar.setLayoutY(330);
+		
+		
+
+		
+		Button Sair = new Button("Sair");
+		Sair.setTextFill(Color.DIMGRAY);
+		Sair.setFont(Font.font("verdana", FontWeight.BOLD, 25));
+		Sair.setLayoutX(230);
+		Sair.setLayoutY(330);
+		
+		
+		//label de LOGIN texto
+		Label textoLogin = new Label("Login");
+		
+		//label informaçao para login
+		Label InfoLogin = new Label("Digite o Usuario :");
+		final TextField Login = new TextField();
+		
+		Label InfoSenha = new Label("Digite a senha :");
+		final PasswordField Senha = new PasswordField();
+		
+		//sets layout login
+		InfoLogin.setLayoutX(250);
+		InfoLogin.setLayoutY(200);
+		
+		Login.setLayoutX(250);
+		Login.setLayoutY(220);
+		Login.setText("Nome");
+		
+		//sets layout senha
+		InfoSenha.setLayoutX(250);
+		InfoSenha.setLayoutY(270);
+		Senha.setLayoutX(250);
+		Senha.setLayoutY(290);
+
+		////
+		textoLogin.setLayoutX(250);
+		textoLogin.setLayoutY(100);
+		
+		
+		textoLogin.setTextFill(Color.ORANGE);
+		textoLogin.setFont(Font.font("verdana", FontWeight.BOLD, 50));
+		
+		pane.getChildren().add(textoLogin);
+		pane.getChildren().add(Login);
+		pane.getChildren().add(Senha);
+		pane.getChildren().add(InfoLogin);
+		pane.getChildren().add(InfoSenha);
+		pane.getChildren().add(logar);
+		pane.getChildren().add(Sair);
+		
+		stage.show();
+		
+		
+		
+		Sair.setOnAction(new	EventHandler<ActionEvent>()	{				
+		public	void	handle(ActionEvent	event)	{
+			Sair();
+		}
+		private void Sair() {
+			System.exit(0);
+		}});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		logar.setOnAction(new	EventHandler<ActionEvent>()	{				
+		public	void	handle(ActionEvent	event)	{
+			logar();
+		}
+		private void logar() {
+			if	(Login.getText().equals("admin")	&& Senha.getText().equals("admin"))	{
+				System.out.println("eae men");
+				stage.close();
+				stage.show();
+			}else{
+				JOptionPane.showMessageDialog(null,	"Login	e/ou	senha inválidos",	"Erro",	JOptionPane.ERROR_MESSAGE);
+			}
+		}});
+			
+		
+
+			
+		}
+
+
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+
+
+}
+

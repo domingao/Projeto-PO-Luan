@@ -1,0 +1,12 @@
+import javafx.application.Application;
+
+public class TelaFunçoes extends Application {	
+		
+			static void sair() {
+			System.exit(0);
+			
+		}
+
+		
+
+}

@@ -1,0 +1,10 @@
+package String;
+
+public class Strings {
+	public static String botaoSalvar="Salvar";
+	public static String botaoLogar="Logar";
+	
+
+	
+
+}
