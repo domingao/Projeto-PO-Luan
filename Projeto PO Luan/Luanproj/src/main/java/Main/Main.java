@@ -4,6 +4,8 @@ import String.Strings;
 import Telas.TelaErro;
 import Telas.TelaFunçoes;
 import Telas.appfunc;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.Animation;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -38,7 +40,11 @@ public class Main extends Application{
 		stage.setScene(scene);
 		stage.setResizable(false);
 		
-		
+		FontAwesomeIconView icon = new FontAwesomeIconView(FontAwesomeIcon.USER);
+		icon.setLayoutX(220);
+		icon.setLayoutY(240);
+		icon.setScaleX(3);
+		icon.setScaleY(3);
 		
 		
 		
@@ -111,6 +117,7 @@ public class Main extends Application{
 		pane.getChildren().add(InfoSenha);
 		pane.getChildren().add(logar);
 		pane.getChildren().add(Sair);
+		pane.getChildren().add(icon);
 		stage.show();
 		
 		
