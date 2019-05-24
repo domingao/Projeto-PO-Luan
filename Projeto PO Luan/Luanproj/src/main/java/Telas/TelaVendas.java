@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -30,6 +31,18 @@ public class TelaVendas extends Application {
 		stagew.setScene(scene);
 		stagew.setResizable(false);
 		
+		
+		PieChart grafico = new PieChart();
+		grafico.getData().addAll(new PieChart.Data("Semestere 1", 20),
+		  new PieChart.Data("Semestre 2", 10),
+		  new PieChart.Data("Semestre 3", 34),
+		  new PieChart.Data("Semestre 5", 12));
+		grafico.setTitle("Lucros por Semestre");
+		grafico.setPrefSize(300, 300);
+		
+		
+		grafico.setLayoutX(320);
+		grafico.setLayoutY(320);
 		
 		BackgroundImage backg= new BackgroundImage(new Image("https://i2.wp.com/obscenidadedigital.com/wp-content/uploads/2017/10/gradiente.png",900,800,false,true),
 		BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
@@ -78,7 +91,7 @@ public class TelaVendas extends Application {
 		btvoltar.setLayoutY(600);
 		
 		
-		pane.getChildren().addAll(btSalvarVD,btvoltar,DataVenda,PrecoProduto,CodCliente,QuantidadeProduto,CodProduto);
+		pane.getChildren().addAll(grafico,btSalvarVD,btvoltar,DataVenda,PrecoProduto,CodCliente,QuantidadeProduto,CodProduto);
 		
 		btSalvarVD.setOnAction(e -> btsalvar(stagew));
 		
