@@ -1,13 +1,14 @@
 package Main;
-import javax.swing.JOptionPane;
 
 import String.Strings;
 import Telas.TelaErro;
 import Telas.TelaFunçoes;
 import Telas.appfunc;
+import javafx.animation.Animation;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -25,21 +26,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
 public class Main extends Application{
-	
 	
 	@Override
 	public void start(final Stage stage) throws Exception {		
 		stage.setTitle(Strings.labelLogin);
-		
-			
-		
+	
 		AnchorPane pane = new AnchorPane();
 		pane.setPrefSize(640, 480);
 		Scene scene = new Scene(pane);
 		stage.setScene(scene);
 		stage.setResizable(false);
+		
 		
 		
 		
@@ -113,7 +111,6 @@ public class Main extends Application{
 		pane.getChildren().add(InfoSenha);
 		pane.getChildren().add(logar);
 		pane.getChildren().add(Sair);
-		
 		stage.show();
 		
 		

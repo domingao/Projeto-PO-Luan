@@ -96,20 +96,37 @@ public class TelaProdutos extends Application {
 		
 		pane.getChildren().addAll(btvoltar,btSalvarPD,CodProduto, NomeProduto,Precoproduto,descricaoProduto,quantidadeProduto);
 		
-		btvoltar.setOnAction(new	EventHandler<ActionEvent>()	{				
-			public	void	handle(ActionEvent	event)	{
-				try {
-					stagew.close();
-					new	appfunc().start(new Stage());
-				} catch (Exception e) {
-					//
-					e.printStackTrace();
-				}
-			}
-		});
+		
+		btSalvarPD.setOnAction(e -> btsalvar(stagew));		
+		
+		btvoltar.setOnAction(e -> btvoltars(stagew));				
 		
 		stagew.show();
 		
+	}
+	
+	public void btvoltars(Stage stage) {
+		try {
+			stage.close();
+			new	appfunc().start(new Stage());
+		} catch (Exception e) {
+			//
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public void btsalvar(Stage stage){
+			try {
+				stage.close();
+				new	TelaProdutos().start(new Stage());
+				new TelaSalvo().start(new Stage());
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 
 }

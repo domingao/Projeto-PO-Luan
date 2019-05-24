@@ -1,4 +1,5 @@
 package Telas;
+import String.Strings;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -71,6 +72,16 @@ public class TelaFornecedores extends Application {
 		
 		
 		//botao
+		
+		Button btSalvarFD = new Button(Strings.botaoSalvar);
+		btSalvarFD.setTextFill(Color.DARKSLATEGREY);
+		btSalvarFD.setFont(Font.font("verdana", FontWeight.BOLD, 25));
+		btSalvarFD.setLayoutX(750);
+		btSalvarFD.setLayoutY(580);
+		
+		
+		
+		
 		Button btvoltar = new Button("Voltar");
 		btvoltar.setTextFill(Color.DARKSLATEGREY);
 		btvoltar.setFont(Font.font("verdana", FontWeight.BOLD, 15));
@@ -78,22 +89,37 @@ public class TelaFornecedores extends Application {
 		btvoltar.setLayoutY(600);
 		
 		
-		pane.getChildren().addAll(btvoltar,CodFornecedor,NomeFornecedor,CNPJFornecedor,PrecoprodutoFornecedor,descricaoProduto,quantidadeProduto);
+		pane.getChildren().addAll(btSalvarFD,btvoltar,CodFornecedor,NomeFornecedor,CNPJFornecedor,PrecoprodutoFornecedor,descricaoProduto,quantidadeProduto);
 		
-		btvoltar.setOnAction(new	EventHandler<ActionEvent>()	{				
-			public	void	handle(ActionEvent	event)	{
-				try {
-					stagew.close();
-					new	appfunc().start(new Stage());
-				} catch (Exception e) {
-					//
-					e.printStackTrace();
-				}
-			}
-		});
+		btvoltar.setOnAction(e -> handle(stagew));
+		btSalvarFD.setOnAction(e -> btsalvarfd(stagew) );
 		
 		stagew.show();
 		
+	}
+	
+	
+	public void btsalvarfd(Stage stage){
+		try {
+			stage.close();
+			new	TelaFornecedores().start(new Stage());
+			new TelaSalvo().start(new Stage());
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+		
+		
+	public	void	handle(Stage stage)	{
+		try {
+			new	appfunc().start(new Stage());
+			stage.close();
+		} catch (Exception e) {
+			//
+			e.printStackTrace();
+		}
 	}
 
 }

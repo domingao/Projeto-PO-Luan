@@ -18,7 +18,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
 
-public class TelaErro extends Application {
+public class TelaSalvo extends Application {
 	private	AnchorPane	pane;
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -36,17 +36,17 @@ public class TelaErro extends Application {
 		 imagem2.setTranslateY(20);
 		 
 		
-		Label texto = new Label("Dados incorretos");
+		Label texto = new Label("Dados Salvos");
 		texto.setTextFill(Color.WHITE);
 		texto.setFont(Font.font("verdana", FontWeight.BOLD, 10));
 		texto.setLayoutX(50);
 		texto.setLayoutY(30);
 		
 		
-		BackgroundImage erro= new BackgroundImage(new Image("https://i2.wp.com/obscenidadedigital.com/wp-content/uploads/2017/10/gradiente.png",200,100,true,false),
+		BackgroundImage info= new BackgroundImage(new Image("https://madeirasgasometro.vteximg.com.br/arquivos/ids/168791-490-490/mdf-cristallo-cinza-sagrado-imagem-01.jpg",0,0,true,false),
 		BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
 		BackgroundSize.DEFAULT);
-		pane.setBackground(new Background(erro));
+		pane.setBackground(new Background(info));
 		
 		
 		pane.getChildren().addAll(texto,imagem2);

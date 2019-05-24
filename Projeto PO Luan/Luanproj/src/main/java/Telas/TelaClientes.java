@@ -1,6 +1,7 @@
 
 
 package Telas;
+import String.Strings;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -59,6 +60,17 @@ public class TelaClientes extends Application {
 		
 		
 		//botao
+		
+		
+		
+		Button btSalvarCL = new Button(Strings.botaoSalvar);
+		btSalvarCL.setTextFill(Color.DARKSLATEGREY);
+		btSalvarCL.setFont(Font.font("verdana", FontWeight.BOLD, 25));
+		btSalvarCL.setLayoutX(750);
+		btSalvarCL.setLayoutY(580);
+		
+		
+		
 		Button btvoltar = new Button("Voltar");
 		btvoltar.setTextFill(Color.DARKSLATEGREY);
 		btvoltar.setFont(Font.font("verdana", FontWeight.BOLD, 15));
@@ -66,13 +78,29 @@ public class TelaClientes extends Application {
 		btvoltar.setLayoutY(600);
 		
 		
-		pane.getChildren().addAll(btvoltar,CodCliente,NomeCliente,CPFCliente,idadeCliente);
+		pane.getChildren().addAll(btSalvarCL,btvoltar,CodCliente,NomeCliente,CPFCliente,idadeCliente);
 		
 		btvoltar.setOnAction(e -> handle(stagew));
+		
+		btSalvarCL.setOnAction(e -> btsalvar(stagew));
 		
 		stagew.show();
 		
 	}
+	
+	public void btsalvar(Stage stage){
+		try {
+			stage.close();
+			new	TelaClientes().start(new Stage());
+			new TelaSalvo().start(new Stage());
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
+	
+	
 	public	void	handle(Stage stage)	{
 		try {
 			new	appfunc().start(new Stage());

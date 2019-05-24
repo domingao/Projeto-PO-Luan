@@ -1,9 +1,11 @@
 package Telas;
+import String.Strings;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -35,7 +37,40 @@ public class TelaVendas extends Application {
 		//then you set to your node
 		pane.setBackground(new Background(backg));
 		
+		
+		
+		TextField CodProduto = new TextField("Codigo do Produto");
+		CodProduto.setLayoutX(20);
+		CodProduto.setLayoutY(190);
+		
+		TextField PrecoProduto = new TextField("Preço Produto");
+		PrecoProduto.setLayoutX(250);
+		PrecoProduto.setLayoutY(190);
+		
+		
+		TextField QuantidadeProduto = new TextField("Quantidade");
+		QuantidadeProduto.setLayoutX(20);
+		QuantidadeProduto.setLayoutY(250);
+		
+		
+		TextField CodCliente = new TextField("Codigo Cliente(Opcional)");
+		CodCliente.setLayoutX(250);
+		CodCliente.setLayoutY(250);
+		
+		
+		TextField DataVenda = new TextField("Data Venda");
+		DataVenda.setLayoutX(20);
+		DataVenda.setLayoutY(310);
+		
 		//botao
+		
+		Button btSalvarVD = new Button(Strings.botaoSalvar);
+		btSalvarVD.setTextFill(Color.DARKSLATEGREY);
+		btSalvarVD.setFont(Font.font("verdana", FontWeight.BOLD, 25));
+		btSalvarVD.setLayoutX(750);
+		btSalvarVD.setLayoutY(580);
+		
+		
 		Button btvoltar = new Button("Voltar");
 		btvoltar.setTextFill(Color.DARKSLATEGREY);
 		btvoltar.setFont(Font.font("verdana", FontWeight.BOLD, 15));
@@ -43,22 +78,40 @@ public class TelaVendas extends Application {
 		btvoltar.setLayoutY(600);
 		
 		
-		pane.getChildren().add(btvoltar);
+		pane.getChildren().addAll(btSalvarVD,btvoltar,DataVenda,PrecoProduto,CodCliente,QuantidadeProduto,CodProduto);
 		
-		btvoltar.setOnAction(new	EventHandler<ActionEvent>()	{				
-			public	void	handle(ActionEvent	event)	{
-				try {
-					stagew.close();
-					new	appfunc().start(new Stage());
-				} catch (Exception e) {
-					//
-					e.printStackTrace();
-				}
-			}
-		});
+		btSalvarVD.setOnAction(e -> btsalvar(stagew));
+		
+		btvoltar.setOnAction(e -> btvoltars(stagew));				
 		
 		stagew.show();
 		
 	}
+	
+	
+	public void btvoltars(Stage stage) {
+		try {
+			stage.close();
+			new	appfunc().start(new Stage());
+		} catch (Exception e) {
+			//
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public void btsalvar(Stage stage){
+		try {
+			stage.close();
+			new	TelaVendas().start(new Stage());
+			new TelaSalvo().start(new Stage());
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
+	
 
 }
