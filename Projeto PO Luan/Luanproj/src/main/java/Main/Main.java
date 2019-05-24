@@ -46,6 +46,12 @@ public class Main extends Application{
 		icon.setScaleX(3);
 		icon.setScaleY(3);
 		
+		FontAwesomeIconView icon2 = new FontAwesomeIconView(FontAwesomeIcon.KEY);
+		icon2.setLayoutX(220);
+		icon2.setLayoutY(305);
+		icon2.setScaleX(3);
+		icon2.setScaleY(3);
+		
 		
 		
 		//botao
@@ -117,7 +123,7 @@ public class Main extends Application{
 		pane.getChildren().add(InfoSenha);
 		pane.getChildren().add(logar);
 		pane.getChildren().add(Sair);
-		pane.getChildren().add(icon);
+		pane.getChildren().addAll(icon,icon2);
 		stage.show();
 		
 		
