@@ -1,8 +1,14 @@
 package Telas;
+import com.dlsc.formsfx.model.structure.Field;
+import com.dlsc.formsfx.model.structure.Form;
+import com.dlsc.formsfx.model.structure.IntegerField;
+
 import String.Strings;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -58,21 +64,12 @@ public class TelaProdutos extends Application {
 		TextField descricaoProduto = new TextField("Descriçao do produto");
 		descricaoProduto.setLayoutX(250);
 		descricaoProduto.setLayoutY(250);
-		
+	
+
+
 		TextField quantidadeProduto = new TextField("Quantidade do produto");
 		quantidadeProduto.setLayoutX(20);
 		quantidadeProduto.setLayoutY(310);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		//botao
 		
@@ -92,7 +89,6 @@ public class TelaProdutos extends Application {
 		btvoltar.setFont(Font.font("verdana", FontWeight.BOLD, 15));
 		btvoltar.setLayoutX(20);
 		btvoltar.setLayoutY(600);
-		
 		
 		pane.getChildren().addAll(btvoltar,btSalvarPD,CodProduto, NomeProduto,Precoproduto,descricaoProduto,quantidadeProduto);
 		
